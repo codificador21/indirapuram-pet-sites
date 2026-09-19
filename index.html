@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indirapuram Pet Business Demos</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f5f6f4; --card: #fff; --ink: #172026; --muted: #5f6a70; --line: #e2e5e1; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 500 16px/1.6 "Plus Jakarta Sans", system-ui, sans-serif; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 20px 72px; }
+    h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); letter-spacing: -.03em; line-height: 1.1; margin: 0 0 10px; text-wrap: balance; }
+    .lede { color: var(--muted); max-width: 60ch; margin: 0 0 36px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    a.site { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .3s, box-shadow .3s; }
+    a.site:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(20, 30, 30, .1); }
+    a.site:focus-visible { outline: 3px solid #172026; outline-offset: 3px; }
+    .shot { aspect-ratio: 16 / 9; background: var(--c2) center / cover; position: relative; }
+    .shot::after { content: ""; position: absolute; inset: auto 0 0 0; height: 6px; background: linear-gradient(90deg, var(--c1) 0 60%, var(--c2) 60%); }
+    .body { padding: 16px 18px 18px; }
+    .kind { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    h2 { font-size: 1.15rem; margin: 2px 0 4px; letter-spacing: -.01em; }
+    .area { font-size: .9rem; color: var(--muted); margin: 0 0 10px; }
+    .look { font-size: .85rem; margin: 0; padding-top: 10px; border-top: 1px solid var(--line); }
+    footer { margin-top: 40px; font-size: .85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Website demos for Indirapuram pet businesses</h1>
+    <p class="lede">Seven sample websites, each styled for one local clinic, groomer or pet shop. Prices, hours, reviews and photos are placeholders to confirm with each owner.</p>
+    <div class="grid" id="grid"></div>
+    <footer>Designed &amp; developed by Arpit Bhushan · arpitbhushan1@gmail.com</footer>
+  </div>
+  <script>
+    const SITES = [{"slug": "indirapuram-pet-clinic", "name": "Indirapuram Pet Clinic", "kind": "Multispecialty vet clinic", "area": "Gyan Khand 1", "look": "Classic & trustworthy · serif headings · navy + ochre · 24h emergency bar · image left", "accent": "#1d4f91", "dark": "#0f2240"}, {"slug": "modern-dog-clinic", "name": "Modern Dog Clinic", "kind": "Dog clinic", "area": "Shakti Khand", "look": "Clean & clinical · Manrope · electric blue + coral · centred hero with wide photo", "accent": "#2557e6", "dark": "#0c1733"}, {"slug": "rs-pet-clinic", "name": "R S Pet Clinic", "kind": "Neighbourhood pet clinic", "area": "Niti Khand 3", "look": "Warm & friendly · Nunito · green + sunshine yellow · full-photo hero · pill buttons", "accent": "#0f7a63", "dark": "#0e2c26"}, {"slug": "a-to-z-pet-shop-dog-clinic", "name": "A to Z Pet Shop & Dog Clinic", "kind": "Pet shop + dog clinic", "area": "Nyay Khand", "look": "Bold & retail · Bricolage Grotesque · tomato + slate + teal · shop-first layout", "accent": "#e4572e", "dark": "#1d2a3a"}, {"slug": "ln-dog-clinic-pet-shop", "name": "L N Dog Clinic", "kind": "Dog clinic + pet shop", "area": "Niti Khand 3", "look": "Calm & natural · Outfit · forest green + orange · dark header", "accent": "#2f6b3a", "dark": "#172a1c"}, {"slug": "the-pet-mall-grooming", "name": "The Pet Mall", "kind": "Grooming parlour + pet shop", "area": "Vaibhav Khand (Shipra Mall)", "look": "Boutique & elegant · Marcellus serif · plum + rose · before/after sliders", "accent": "#6b2d6b", "dark": "#2a1630"}, {"slug": "furry-barks-salon", "name": "Furry Barks", "kind": "Pet grooming salon", "area": "Abhay Khand 3", "look": "Playful & bright · Fredoka · royal blue + yellow · bubbles + running strip", "accent": "#3148d4", "dark": "#131a3b"}];
+    document.getElementById("grid").innerHTML = SITES.map((s) => `
+      <a class="site" href="${s.slug}/" style="--c1:${s.accent};--c2:${s.dark}">
+        <div class="shot" style="background-image:url('${s.slug}/images/social/share.jpg')"></div>
+        <div class="body">
+          <div class="kind">${s.kind}</div>
+          <h2>${s.name}</h2>
+          <p class="area">${s.area}, Indirapuram</p>
+          <p class="look">${s.look}</p>
+        </div>
+      </a>`).join("");
+  </script>
+</body>
+</html>
